@@ -1,6 +1,6 @@
 # URL_Shortener
 
-URL Shortener service that takes in a valid URL and returns a shortened URL, redirecting the user to the previously provided URL
+URL Shortener service that takes in a valid URL and returns a shortened URL, redirecting the user to the previously provided URL. 
 
 Also keep track of total visits/clicks on the URL
 
@@ -14,3 +14,7 @@ Redirects the user to the original URL
 
 ### GET /URL/analytics/:id
 Returns the clicks for the provided short id
+
+## Server Side rendering with EJS
+Fast Rendering HTML on the UI with EJS with static router for better user experience.
+Integrating Server Side Rendering with NodeJS
