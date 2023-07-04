@@ -28,10 +28,10 @@ Authentication Patterns:
 1. Statefull
 
                   username/password
-            ----------------------------> 
- client                                      server
- uid:367    <----------------------------
-                    session uid
+              ---------------------------->` 
+ `client`                                      `server`
+ `uid:367`    `<----------------------------`
+                    `session uid`
 
 Server can send session uid via a response, cookie or headers
 
