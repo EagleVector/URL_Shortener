@@ -52,6 +52,6 @@ client ---------------------> Auth Middleware ----------------> Endpoint Route
 
 ### Stateless Auth
 
-In the session uid / token it has the user data in encrypted format so that we dont have to store anything on the server side. It is accessible to everyone but it can not be manipulated or changed by anyone.
+In the token it has the user data in encrypted format so that we dont have to store anything on the server side. It is accessible to everyone but it can not be manipulated or changed by anyone. Only with the secret key we can modify the token and manipulate the data. Never share tokens with anyone. Tokens can stay for a longer period. Use case: serverless framework, social media.
 
 This can be achieved with the help of JSON WEB TOKENS (JWT)
