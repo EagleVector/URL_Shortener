@@ -65,7 +65,17 @@ Cookies are domain specific that means it only gets send/recieved to/from respec
 
 Cookies are equipped with their custom expiration date and many more.
 
+Cookies are automatic and are only for browsers
+
 ### RESPONSE
 
 Simple response can be sent in the form of json inside req header
-AUTHORIZATION comes into picture with the auth Bearer token.
+AUTHORIZATION comes into picture with the auth Bearer token inside headers.
+
+We can use local storage to save our auth/bearer token in case of browsers otherwise we can use mobile device memory to save the token
+
+## AUTHENTICATION vs AUTHORIZATION
+
+Authentication is the process of checking if the user is authenticated i.e having a valid account with correct cred.
+
+Authorization is the process of checking if the user is authorized to use a particular resource inside the domain.
