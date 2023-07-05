@@ -23,9 +23,9 @@ Fast Rendering HTML on the UI with EJS with static router for better user experi
 
 Authentication Patterns:
 1. Statefull - Which maintains state or data on the server side
-2. Stateless - Which has no data
+2. Stateless - Which has no data on the server side
 
-1. Statefull
+### Statefull Auth
 
                   username/password
               ----------------------------> 
@@ -35,7 +35,7 @@ Authentication Patterns:
 
 Server can send session uid via a response, cookie or headers
 
-## Express Flow of Auth
+### Express Flow of Auth
 
 
 client ---------------------> Auth Middleware ----------------> Endpoint Route
@@ -44,3 +44,14 @@ client ---------------------> Auth Middleware ----------------> Endpoint Route
         valid it calls 
         next() else rejects 
         the request
+
+### Problems with statefull auth
+
+1. The data is lost when we restart the server
+2. It uses data on the server which is not good to consider as we have limited memory on the server
+
+### Stateless Auth
+
+In the session uid / token it has the user data in encrypted format so that we dont have to store anything on the server side. It is accessible to everyone but it can not be manipulated or changed by anyone.
+
+This can be achieved with the help of JSON WEB TOKENS (JWT)
