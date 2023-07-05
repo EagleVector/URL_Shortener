@@ -27,23 +27,16 @@ Authentication Patterns:
 
 ### Statefull Auth
 
-                  username/password
-              ----------------------------> 
- client                                      server
- uid:367      <----------------------------
-                    session uid
+Client (username/password)--> Server
+
+Client <----(session uid) Server
 
 Server can send session uid via a response, cookie or headers
 
 ### Express Flow of Auth
 
 
-client ---------------------> Auth Middleware ----------------> Endpoint Route
-        Checks for cookie
-        value or uid, if
-        valid it calls 
-        next() else rejects 
-        the request
+client (Checks for cookie value or uid, if valid it calls next() else rejects the request) ---> Auth Middleware ----> Endpoint Route
 
 ### Problems with statefull auth
 
@@ -55,3 +48,24 @@ client ---------------------> Auth Middleware ----------------> Endpoint Route
 In the token it has the user data in encrypted format so that we dont have to store anything on the server side. It is accessible to everyone but it can not be manipulated or changed by anyone. Only with the secret key we can modify the token and manipulate the data. Never share tokens with anyone. Tokens can stay for a longer period. Use case: serverless framework, social media.
 
 This can be achieved with the help of JSON WEB TOKENS (JWT)
+
+## AUTH ARCHITECTURE
+
+DataBase(checks if the user is valid or not)  <---  Server (parses the request)  <--- Clinent (sends username / password)
+
+If the request is valid Server will create a token (JWT) which will have login cred of the user and then it will try to ship it back to the user. Everything happens in the server.
+
+Now server can send the token in 2 ways back to the client
+ 1. In the form of `cookie`
+ 2. In the form of response
+
+### COOKIE
+
+Cookies are domain specific that means it only gets send/recieved to/from respective domains.
+
+Cookies are equipped with their custom expiration date and many more.
+
+### RESPONSE
+
+Simple response can be sent in the form of json inside req header
+AUTHORIZATION comes into picture with the auth Bearer token.
