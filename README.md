@@ -79,3 +79,9 @@ We can use local storage to save our auth/bearer token in case of browsers other
 Authentication is the process of checking if the user is authenticated i.e having a valid account with correct cred.
 
 Authorization is the process of checking if the user is authorized to use a particular resource inside the domain.
+
+## Admin privilege:
+
+`/admin/urls/`
+
+List of all the user details and analytics of urls generated.
